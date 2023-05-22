@@ -1,0 +1,119 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Sign up Admin</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form [formGroup]="signupAdminForm">
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+            </div>
+            <div *ngIf="signupAdminForm.controls['firstName'].invalid &&
+              (signupAdminForm.controls['firstName'].touched ||
+              signupAdminForm.controls['firstName'].dirty)">
+  
+              <div *ngIf="signupAdminForm.controls['firstName'].errors.required" style="color: red;">
+                First Name is Required
+  
+              </div>
+              <div *ngIf="signupAdminForm.controls['firstName'].errors.minlength" style="color: red;">
+                First Name Require 3 Chars
+  
+              </div>
+  
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+            </div>
+            <div *ngIf="signupAdminForm.controls['lastName'].invalid &&
+            (signupAdminForm.controls['lastName'].touched ||
+            signupAdminForm.controls['lastName'].dirty)">
+            <div *ngIf="signupAdminForm.controls['lastName'].errors.required" style="color: red;">
+                Last Name is Required
+  
+              </div>
+              <div *ngIf="signupAdminForm.controls['lastName'].errors.minlength" style="color: red;">
+                Last Name Require 5 Chars
+  
+              </div>
+  
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="Email" placeholder="Email">
+            </div>
+            <div *ngIf="signupAdminForm.controls['Email'].invalid &&
+            (signupAdminForm.controls['Email'].touched ||
+            signupAdminForm.controls['Email'].dirty)">
+            <div *ngIf="signupAdminForm.controls['Email'].errors.required" style="color: red;">
+               Email is Required
+  
+            </div>
+            <div *ngIf="signupAdminForm.controls['Email'].errors.email" style="color: red;">
+              Invalid Email
+  
+            </div>
+            
+  
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            </div>
+            <div *ngIf="signupAdminForm.controls['password'].invalid &&
+            (signupAdminForm.controls['password'].touched ||
+            signupAdminForm.controls['password'].dirty)">
+            <div *ngIf="signupAdminForm.controls['password'].errors.required" style="color: red;">
+              password required
+  
+            </div>
+            <div *ngIf="signupAdminForm.controls['password'].errors.minlength" style="color: red;">
+              password Require 6 Chars
+  
+            </div>
+            
+            <div *ngIf="signupAdminForm.controls['password'].errors.maxlength" style="color: red;">
+              password Require 12 Chars max
+  
+            </div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" formControlName="confirmpwd" placeholder="Confirm Password">
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" formControlName="tel" placeholder="tel">
+            </div>
+            <div *ngIf="signupAdminForm.controls['tel'].invalid &&
+            (signupAdminForm.controls['tel'].touched ||
+            signupAdminForm.controls['tel'].dirty)">
+  
+            
+            <div *ngIf="signupAdminForm.controls['tel'].errors.required" style="color: red;">
+              tel required
+  
+            </div>
+            <div *ngIf="signupAdminForm.controls['tel'].errors.minlength" style="color: red;">
+              tel require 8 Chars
+  
+            </div>
+            <div *ngIf="signupAdminForm.controls['tel'].errors.maxlength" style="color: red;">
+              tel require just 8 Chars
+  
+            </div>
+          </div>
+            
+  
+            <div class="form-group">
+              <input type="submit" (click)="signupAdmin()" [disabled]="signupAdminForm.invalid" class="btn btn-danger py-3 px-5" value="Sign up">
+            </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>

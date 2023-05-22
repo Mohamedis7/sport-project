@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Owner</th>
+        
+        <th scope="col">Foundation</th>
+        <th scope="col">Stadium Name</th>
+        <th scope="col">Stadium city</th>
+        <th scope="col">Stadium Capacity</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams">
+        <td>{{team._id}}</td>
+        <td>{{team.name}}</td>
+        <td>{{team.owner}}</td>
+        
+        <td>{{team.foundation}}</td>
+        <td>{{searchStadium(team.stadiumId).name}}</td>
+        <td>{{searchStadium(team.stadiumId).city}}</td>
+        <td>{{searchStadium(team.stadiumId).capacity}}</td>
+        <td><button type="button" class="btn btn-info" (click)="goToDisplay(team._id)">display</button>
+          <button type="button" class="btn btn-warning" (click)="displayTeam(team._id)">edit</button>
+          <button type="button" class="btn btn-danger"(click)="deleteteam(team._id)">Delete</button></td>
+      </tr>
+     
+      <tr>
+       
+    </tbody>
+  </table>

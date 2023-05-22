@@ -1,0 +1,37 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Add-Match</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form #matchForm="ngForm" (ngSubmit)="addMatch()">
+            <div class="form-group">
+            </div>
+            <input type="number" class="form-control" [(ngModel)]="match.scoreOne" name="scoreOne" placeholder="Score One">
+            <div class="form-group">
+            </div>
+            <input type="number" class="form-control"[(ngModel)]="match.scoreTwo" name="scoreTwo" placeholder="Score Two">
+            <div class="form-group">
+            </div>
+            <input type="text" class="form-control"[(ngModel)]="match.teamOne" name="teamOne" placeholder="Team One">
+            <div class="form-group">
+              <input type="text" class="form-control"[(ngModel)]="match.teamTwo" name="teamTwo" placeholder="Team Two">
+            </div>
+            
+           
+            <div class="form-group">
+              <input type="submit" class="btn btn-danger py-3 px-5" value="Add Match">
+            </div>
+          </form>  
+        </div>
+        
+      </div>
+    </div>
+  </div>

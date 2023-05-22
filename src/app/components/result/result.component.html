@@ -1,0 +1,80 @@
+<div class="container">
+      
+
+    <div class="row">
+      <div class="col-lg-12">
+        
+        <div class="d-flex team-vs mt-5">
+          <span class="score" >
+            <span [ngStyle]="{'color':scoreColor(matchInput.scoreOne,matchInput.scoreTwo)}">{{matchInput.scoreOne}}</span>
+            -
+            <span [ngStyle]="{'color':scoreColor(matchInput.scoreTwo,matchInput.scoreOne)}">{{matchInput.scoreTwo}}</span>
+          </span>
+          <div class="team-1 w-50">
+            <div class="team-details w-100 text-center">
+              <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+              <h3>
+               <span [ngClass]="{
+                'win': matchInput.scoreOne > matchInput.scoreTwo,
+                'loss': matchInput.scoreOne < matchInput.scoreTwo,
+                'draw':matchInput.scoreOne == matchInput.scoreTwo
+               }">{{matchInput.teamOne}}</span> 
+              </h3>
+              <span>(loss)</span>
+              <ul class="list-unstyled">
+               
+              </ul>
+            </div>
+          </div>
+          <div class="team-2 w-50">
+            <div class="team-details w-100 text-center">
+              <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+              
+                <h3>
+                  <span [ngClass]="{
+                    'win': matchInput.scoreTwo > matchInput.scoreOne,
+                'loss': matchInput.scoreTwo < matchInput.scoreOne,
+                'draw':matchInput.scoreTwo == matchInput.scoreOne
+
+                  }">
+                    {{matchInput.teamTwo}}
+
+                  </span>
+                </h3>
+                <span>(win)</span>
+              <ul class="list-unstyled">
+                
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Comments</h3>
+      <div *ngFor="let comment of matchInput.comments">
+        <p>{{comment.content}}</p>
+
+      </div>
+    </div>
+    <div>
+      <form #commentForm="ngForm" (ngSubmit)="addComment()">
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="comment.content" name="content" placeholder="Your Comment...">
+        </div>
+       
+        
+      
+        
+       
+        <div class="form-group">
+          <input type="submit" class="btn btn-danger py-3 px-5" value="Add Comment">
+        </div>
+      </form>  
+    </div>
+  </div>
+  <div class="form-group">
+    <input style="margin-left: 590px; margin-top: 10px;"  type="submit" class="btn btn-danger py-3 px-5" routerLink="searchMatches" value="Search Match">
+  </div>
+  

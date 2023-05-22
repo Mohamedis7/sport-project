@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">email</th>
+        
+        <th scope="col">tel</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let user of users">
+        
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        
+        <td>{{user.tel}}</td>
+        <td><button type="button" class="btn btn-info" (click)="displayMatch(match.id)">Display</button>
+          <button type="button" class="btn btn-warning" (click)="goToEdit(match.id)">edit</button>
+          <button type="button" class="btn btn-danger" (click)="deleteMatch(match.id)">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

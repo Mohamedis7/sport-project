@@ -1,0 +1,57 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">{{title | asterix}}</h1>
+        <h1 style="color: rgb(174, 225, 65);" class="">{{actualDate | date:"dd/MM/yyyy hh:mm"}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form [formGroup]="loginForm">
+
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="Email" placeholder="Email">
+          </div>
+          <div *ngIf="loginForm.controls['Email'].invalid &&
+            (loginForm.controls['Email'].touched ||
+            loginForm.controls['Email'].dirty)">
+            <div *ngIf="loginForm.controls['Email'].errors.required" style="color: red;">
+              Email is Required
+
+            </div>
+            <div *ngIf="loginForm.controls['Email'].errors.email" style="color: red;">
+              Invalid Email
+
+            </div>
+
+
+
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="pwd" placeholder="password">
+          </div>
+          <div *ngIf="loginForm.controls['pwd'].invalid &&
+            (loginForm.controls['pwd'].touched ||
+            loginForm.controls['pwd'].dirty)">
+            <div *ngIf="loginForm.controls['pwd'].errors.required" style="color: red;">
+              password required
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <input type="submit" (click)="login()" class="btn btn-danger py-3 px-5" value="Log in">
+          </div>
+          <span style="color: red;">{{errorMsg}}</span>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

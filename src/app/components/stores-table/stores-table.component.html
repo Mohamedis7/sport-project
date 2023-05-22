@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let store of stores">
+
+            <td>{{store.id}}</td>
+            <td>{{store.name}}</td>
+            <td>{{store.address}}</td>
+
+            <td><button type="button" class="btn btn-info" (click)="displayMatch(match.id)">Display</button>
+                <button type="button" class="btn btn-warning" (click)="goToEdit(store.id)">edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteMatch(match.id)">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,62 @@
+
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+<header class="site-navbar py-4" role="banner">
+
+  <div class="container">
+    <div class="d-flex align-items-center">
+      <div class="site-logo">
+        <a href="index.html">
+          <img src="{{logo}}" alt="Logo">
+        </a>
+      </div>
+      <div class="ml-auto">
+        <nav class="site-navigation position-relative text-right" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+            <li class="active"><a routerLink="" class="nav-link">{{home}}</a></li>
+            <li><a routerLink="matches" class="nav-link">{{matches}}</a></li>
+            <li><a routerLink="players" class="nav-link">{{players}}</a></li>
+            <li><a routerLink="teams" class="nav-link">Teams</a></li>
+            <li><a routerLink="searchTeams" class="nav-link">Search Team</a></li>
+            <li><a routerLink="weather" class="nav-link">Search weather</a></li>
+
+            
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Admin
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" routerLink="signupAdmin">Sign up</a>
+
+                  <a class="dropdown-item" routerLink="addMatch">Add Match</a>
+                  <a class="dropdown-item" routerLink="addTeam">Add Team</a>
+                  <a class="dropdown-item" routerLink="addPlayer">Add player</a>
+                  <a class="dropdown-item" routerLink="addStadium">Add Stadium</a>
+                  <a class="dropdown-item" routerLink="addStore">Add Store</a>
+                  <a class="dropdown-item" routerLink="admin">dashboard</a>
+                  
+                </div>
+              </div>
+            </li>
+            
+            
+            <li><a routerLink="signin" class="nav-link">Login</a></li>
+            <li><a routerLink="signup" class="nav-link">Sign up</a></li>
+          </ul>
+        </nav>
+
+        <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+            class="icon-menu h3 text-white"></span></a>
+      </div>
+    </div>
+  </div>
+
+</header>

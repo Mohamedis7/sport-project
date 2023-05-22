@@ -1,0 +1,19 @@
+<div class="latest-news">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 title-section">
+          <h2 class="heading">{{title}}:{{nbr}}</h2>
+          <h1>{{calcul(7,5,6)}}</h1>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div *ngFor="let i of newsTab " class="col-md-4">
+          <app-info [infoInput]="i"></app-info>
+        </div>
+       
+       
+        
+      </div>
+
+    </div>
+  </div>
